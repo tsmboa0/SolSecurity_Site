@@ -5,7 +5,6 @@ import { useTheme } from "@/components/theme-provider";
 import ScannerForm from "@/components/scanner-form";
 import ScanningAnimation from "@/components/scanning-animation";
 import ResultsSection from "@/components/results-section";
-import DonationSection from "@/components/donation-section";
 import { SecurityAnalysisResponse } from "@shared/schema";
 
 export default function Home() {
@@ -84,14 +83,7 @@ export default function Home() {
 
         {/* Scanner Form */}
         {!isScanning && !results && (
-          <>
-            <ScannerForm onScanStart={handleScanStart} onScanComplete={handleScanComplete} onScanError={handleScanError} />
-            
-            {/* Donation Section - Show on main page */}
-            <div className="mt-8 sm:mt-12">
-              <DonationSection />
-            </div>
-          </>
+          <ScannerForm onScanStart={handleScanStart} onScanComplete={handleScanComplete} onScanError={handleScanError} />
         )}
 
         {/* Scanning Animation */}
