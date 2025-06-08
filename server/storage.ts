@@ -1,4 +1,4 @@
-import { walletAnalyses, type WalletAnalysis, type InsertWalletAnalysis } from "@shared/schema";
+import { walletAnalyses, type WalletAnalysis, type InsertWalletAnalysis, type AddressPoisoningResult, type AccountDustingResult } from "@shared/schema";
 
 export interface IStorage {
   getWalletAnalysis(walletAddress: string): Promise<WalletAnalysis | undefined>;
@@ -13,6 +13,8 @@ export class MemStorage implements IStorage {
   constructor() {
     this.analyses = new Map();
     this.currentId = 1;
+    // Clear any old cached data to prevent type mismatches
+    this.analyses.clear();
   }
 
   async getWalletAnalysis(walletAddress: string): Promise<WalletAnalysis | undefined> {
