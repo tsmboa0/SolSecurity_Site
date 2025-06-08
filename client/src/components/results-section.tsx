@@ -18,31 +18,39 @@ export default function ResultsSection({ results, onNewScan }: ResultsSectionPro
       transition={{ duration: 0.5 }}
       className="space-y-6"
     >
-      {/* Scan Summary Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 p-4 sm:p-6 bg-card border border-border rounded-2xl">
-        <div>
-          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Security Analysis Complete</h2>
-          <p className="text-muted-foreground">
-            Scanned wallet: <span className="font-mono text-sm break-all">{results.walletAddress}</span>
-          </p>
-          <p className="text-xs text-muted-foreground mt-1">
-            Analyzed on {new Date(results.analyzedAt).toLocaleDateString()} at {new Date(results.analyzedAt).toLocaleTimeString()}
-          </p>
+      {/* Scan Summary Header - Mobile Responsive */}
+      <div className="flex flex-col gap-4 p-3 sm:p-4 lg:p-6 bg-card border border-border rounded-2xl">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div className="flex-1 min-w-0">
+            <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground mb-2 leading-tight">Security Analysis Complete</h2>
+            <div className="space-y-1">
+              <p className="text-sm sm:text-base text-muted-foreground">
+                Scanned wallet:
+              </p>
+              <div className="bg-muted/50 rounded-lg p-2 sm:p-3">
+                <span className="font-mono text-xs sm:text-sm break-all text-foreground">{results.walletAddress}</span>
+              </div>
+            </div>
+            <p className="text-xs text-muted-foreground mt-2">
+              Analyzed on {new Date(results.analyzedAt).toLocaleDateString()} at {new Date(results.analyzedAt).toLocaleTimeString()}
+            </p>
+          </div>
+          {onNewScan && (
+            <Button
+              onClick={onNewScan}
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground w-full sm:w-auto flex-shrink-0"
+              size="sm"
+            >
+              <RefreshCw className="w-4 h-4 mr-2" />
+              Scan New Address
+            </Button>
+          )}
         </div>
-        {onNewScan && (
-          <Button
-            onClick={onNewScan}
-            variant="outline"
-            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-          >
-            <RefreshCw className="w-4 h-4 mr-2" />
-            Scan New Address
-          </Button>
-        )}
       </div>
 
-      {/* Analysis Results - Responsive Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+      {/* Analysis Results - Mobile First Responsive Grid */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-6">
         {/* Address Poisoning Analysis */}
         <AnalysisCard
           title="Address Poisoning Analysis"
@@ -51,7 +59,7 @@ export default function ResultsSection({ results, onNewScan }: ResultsSectionPro
           data={results.addressPoisoning}
           additionalMetrics={[
             { label: "Transactions Analyzed", value: results.addressPoisoning.transactionCount },
-            { label: "Fake Addresses", value: results.addressPoisoning.fakeAddresses.length.toString() },
+            { label: "Fake Addresses", value: results.addressPoisoning.fakeAddresses?.length?.toString() || "0" },
             { label: "Mimicked Address", value: results.addressPoisoning.mimickedAddress ? "Detected" : "None" }
           ]}
         />
@@ -65,7 +73,7 @@ export default function ResultsSection({ results, onNewScan }: ResultsSectionPro
           additionalMetrics={[
             { label: "Transactions Analyzed", value: results.dusting.transactionCount },
             { label: "Dust Transactions", value: results.dusting.dustTransactionCount },
-            { label: "Top Dusters", value: results.dusting.topDusterAddresses.length.toString() }
+            { label: "Top Dusters", value: results.dusting.topDusterAddresses?.length?.toString() || "0" }
           ]}
         />
       </div>

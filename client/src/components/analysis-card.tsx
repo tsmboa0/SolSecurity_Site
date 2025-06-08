@@ -57,105 +57,122 @@ export default function AnalysisCard({ title, description, iconType, data, addit
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-red-600"></div>
         )}
         
-        <CardContent className="p-4 sm:p-6 lg:p-8 relative">
-          {/* High Risk Warning Badge */}
+        <CardContent className="p-3 sm:p-4 lg:p-6 xl:p-8 relative">
+          {/* High Risk Warning Badge - Mobile Responsive */}
           {isHighRisk && (
-            <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+            <div className="absolute top-2 right-2 sm:top-3 sm:right-3 lg:top-4 lg:right-4 bg-red-500 text-white text-[10px] sm:text-xs font-bold px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full animate-pulse z-10">
               ⚠️ DANGER
             </div>
           )}
           
-          <div className="flex flex-col sm:flex-row items-start justify-between mb-6 space-y-4 sm:space-y-0">
-            <div className="flex items-center space-x-3">
+          {/* Header Section - Mobile First Design */}
+          <div className="space-y-4 mb-4 sm:mb-6">
+            {/* Title and Icon Row */}
+            <div className="flex items-start space-x-3 pr-16 sm:pr-20">
               <div className={cn(
-                "w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0",
+                "w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center flex-shrink-0",
                 isHighRisk && "bg-red-500/20 text-red-400",
                 isMediumRisk && "bg-orange-500/20 text-orange-400",
                 !isHighRisk && !isMediumRisk && "bg-green-500/20 text-green-400"
               )}>
-                <Icon className="w-6 h-6" />
+                <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <div>
-                <h3 className="text-lg sm:text-xl font-bold text-foreground">{title}</h3>
-                <p className="text-sm sm:text-base text-muted-foreground">{description}</p>
+              <div className="flex-1 min-w-0">
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-foreground leading-tight break-words">{title}</h3>
+                <p className="text-xs sm:text-sm lg:text-base text-muted-foreground mt-1 leading-snug">{description}</p>
               </div>
             </div>
-            <div className="text-right w-full sm:w-auto">
-              <div className={cn(
-                "text-xl sm:text-2xl font-bold mb-1",
-                isHighRisk && "text-red-400",
-                isMediumRisk && "text-orange-400", 
-                !isHighRisk && !isMediumRisk && "text-green-400"
-              )}>{data.riskScore}</div>
-              <div className={cn(
-                "text-sm font-bold px-2 py-1 rounded-full border",
-                isHighRisk && "text-red-300 border-red-500 bg-red-500/20",
-                isMediumRisk && "text-orange-300 border-orange-500 bg-orange-500/20",
-                !isHighRisk && !isMediumRisk && "text-green-300 border-green-500 bg-green-500/20"
-              )}>
-                {isHighRisk && "🚨 "}{isMediumRisk && "⚠️ "}{!isHighRisk && !isMediumRisk && "✅ "}{data.status}
+            
+            {/* Risk Score Section - Full Width on Mobile */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0 pt-2 border-t border-border/50">
+              <div className="flex items-center justify-between sm:justify-start sm:space-x-4">
+                <div className="text-center sm:text-left">
+                  <div className="text-xs text-muted-foreground mb-1">Risk Score</div>
+                  <div className={cn(
+                    "text-lg sm:text-xl lg:text-2xl font-bold",
+                    isHighRisk && "text-red-400",
+                    isMediumRisk && "text-orange-400", 
+                    !isHighRisk && !isMediumRisk && "text-green-400"
+                  )}>{data.riskScore}</div>
+                </div>
+                <div className="sm:ml-4">
+                  <div className="text-xs text-muted-foreground mb-1 text-center sm:text-left">Status</div>
+                  <div className={cn(
+                    "text-xs sm:text-sm font-bold px-2 py-1 rounded-full border whitespace-nowrap",
+                    isHighRisk && "text-red-300 border-red-500 bg-red-500/20",
+                    isMediumRisk && "text-orange-300 border-orange-500 bg-orange-500/20",
+                    !isHighRisk && !isMediumRisk && "text-green-300 border-green-500 bg-green-500/20"
+                  )}>
+                    {isHighRisk && "🚨 "}{isMediumRisk && "⚠️ "}{!isHighRisk && !isMediumRisk && "✅ "}{data.status}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+          {/* Metrics Grid - Mobile Responsive */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
             {additionalMetrics.map((metric, index) => (
-              <div key={index} className="bg-muted/50 rounded-lg p-4">
-                <div className="text-sm text-muted-foreground mb-1">{metric.label}</div>
-                <div className="text-lg sm:text-2xl font-bold text-foreground">{metric.value}</div>
+              <div key={index} className="bg-muted/50 rounded-lg p-3 sm:p-4">
+                <div className="text-xs sm:text-sm text-muted-foreground mb-1 leading-tight">{metric.label}</div>
+                <div className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-foreground break-all">{metric.value}</div>
               </div>
             ))}
           </div>
 
-          {/* Detailed Information */}
+          {/* Detailed Information - Mobile Responsive */}
           {"fakeAddresses" in data && data.fakeAddresses.length > 0 && (
-            <div className="bg-red-950/40 border-2 border-red-500 rounded-lg p-4 mb-4 relative overflow-hidden">
+            <div className="bg-red-950/40 border-2 border-red-500 rounded-lg p-3 sm:p-4 mb-4 relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-red-600 animate-pulse"></div>
-              <h4 className="font-bold text-red-300 mb-3 flex items-center">
+              <h4 className="font-bold text-red-300 mb-3 flex items-center text-sm sm:text-base">
                 🚨 <span className="ml-2">FAKE ADDRESSES DETECTED</span>
               </h4>
               <div className="space-y-3">
                 {data.fakeAddresses.map((address, index) => (
-                  <div key={index} className="bg-red-900/30 border border-red-600/50 rounded p-3 relative">
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <p className="text-xs text-red-300 font-semibold mb-1">Malicious Address #{index + 1}:</p>
-                        <span className="text-xs text-red-200 font-mono break-all bg-red-800/30 p-2 rounded block">{address}</span>
+                  <div key={index} className="bg-red-900/30 border border-red-600/50 rounded p-2 sm:p-3 relative">
+                    <div className="space-y-2">
+                      <div className="flex items-start justify-between">
+                        <p className="text-xs sm:text-sm text-red-300 font-semibold">Malicious Address #{index + 1}:</p>
+                        <div className="ml-2 text-red-400 animate-pulse text-sm">⚠️</div>
                       </div>
-                      <div className="ml-2 text-red-400 animate-pulse">⚠️</div>
+                      <div className="bg-red-800/30 p-2 rounded">
+                        <span className="text-xs text-red-200 font-mono break-all leading-relaxed">{address}</span>
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
               {data.mimickedAddress && (
                 <div className="mt-4 p-3 bg-red-900/40 border border-red-500/60 rounded">
-                  <p className="text-sm text-red-300 font-semibold mb-2">🎯 TARGET ADDRESS BEING MIMICKED:</p>
-                  <div className="bg-red-800/40 rounded p-2">
-                    <span className="text-xs text-red-200 font-mono break-all">{data.mimickedAddress}</span>
+                  <p className="text-xs sm:text-sm text-red-300 font-semibold mb-2">🎯 TARGET ADDRESS BEING MIMICKED:</p>
+                  <div className="bg-red-800/40 rounded p-2 mb-2">
+                    <span className="text-xs text-red-200 font-mono break-all leading-relaxed">{data.mimickedAddress}</span>
                   </div>
-                  <p className="text-xs text-red-400 mt-2">⚠️ Attackers create similar addresses to trick you into sending funds to them</p>
+                  <p className="text-xs text-red-400">⚠️ Attackers create similar addresses to trick you into sending funds to them</p>
                 </div>
               )}
             </div>
           )}
 
           {"topDusterAddresses" in data && data.topDusterAddresses.length > 0 && (
-            <div className="bg-orange-950/40 border-2 border-orange-500 rounded-lg p-4 mb-4 relative overflow-hidden">
+            <div className="bg-orange-950/40 border-2 border-orange-500 rounded-lg p-3 sm:p-4 mb-4 relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-orange-600 animate-pulse"></div>
-              <h4 className="font-bold text-orange-300 mb-3 flex items-center">
+              <h4 className="font-bold text-orange-300 mb-3 flex items-center text-sm sm:text-base">
                 ⚠️ <span className="ml-2">TOP DUSTER ADDRESSES</span>
               </h4>
               <div className="space-y-3">
                 {data.topDusterAddresses.map((address, index) => (
-                  <div key={index} className="bg-orange-900/30 border border-orange-600/50 rounded p-3 relative">
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <p className="text-xs text-orange-300 font-semibold mb-1">Duster #{index + 1}:</p>
-                        <span className="text-xs text-orange-200 font-mono break-all bg-orange-800/30 p-2 rounded block">{address}</span>
+                  <div key={index} className="bg-orange-900/30 border border-orange-600/50 rounded p-2 sm:p-3 relative">
+                    <div className="space-y-2">
+                      <div className="flex items-start justify-between">
+                        <p className="text-xs sm:text-sm text-orange-300 font-semibold">Duster #{index + 1}:</p>
+                        <div className="ml-2 text-orange-400 animate-pulse text-sm">🔍</div>
                       </div>
-                      <div className="ml-2 text-orange-400 animate-pulse">🔍</div>
+                      <div className="bg-orange-800/30 p-2 rounded">
+                        <span className="text-xs text-orange-200 font-mono break-all leading-relaxed">{address}</span>
+                      </div>
+                      <p className="text-xs text-orange-400">This address sent dust transactions to track your wallet</p>
                     </div>
-                    <p className="text-xs text-orange-400 mt-2">This address sent dust transactions to track your wallet</p>
                   </div>
                 ))}
               </div>
@@ -167,15 +184,16 @@ export default function AnalysisCard({ title, description, iconType, data, addit
             </div>
           )}
 
+          {/* Analysis Summary - Mobile Responsive */}
           <div className={cn(
-            "rounded-lg p-4 border",
+            "rounded-lg p-3 sm:p-4 border",
             isHighRisk && "bg-red-950/30 border-red-500/50",
             isMediumRisk && "bg-orange-950/30 border-orange-500/50",
             !isHighRisk && !isMediumRisk && "bg-green-950/30 border-green-500/50"
           )}>
-            <h4 className="font-semibold text-foreground mb-2">Analysis Summary</h4>
+            <h4 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Analysis Summary</h4>
             <p className={cn(
-              "text-sm",
+              "text-xs sm:text-sm leading-relaxed",
               isHighRisk && "text-red-200",
               isMediumRisk && "text-orange-200",
               !isHighRisk && !isMediumRisk && "text-green-200"
