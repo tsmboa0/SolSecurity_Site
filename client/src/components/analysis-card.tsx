@@ -109,35 +109,60 @@ export default function AnalysisCard({ title, description, iconType, data, addit
 
           {/* Detailed Information */}
           {"fakeAddresses" in data && data.fakeAddresses.length > 0 && (
-            <div className="bg-red-950/30 border border-red-500/50 rounded-lg p-4 mb-4">
-              <h4 className="font-semibold text-red-300 mb-2">🚨 Fake Addresses Detected</h4>
-              <div className="space-y-2">
+            <div className="bg-red-950/40 border-2 border-red-500 rounded-lg p-4 mb-4 relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-red-600 animate-pulse"></div>
+              <h4 className="font-bold text-red-300 mb-3 flex items-center">
+                🚨 <span className="ml-2">FAKE ADDRESSES DETECTED</span>
+              </h4>
+              <div className="space-y-3">
                 {data.fakeAddresses.map((address, index) => (
-                  <div key={index} className="bg-red-900/20 rounded p-2">
-                    <span className="text-xs text-red-200 font-mono break-all">{address}</span>
+                  <div key={index} className="bg-red-900/30 border border-red-600/50 rounded p-3 relative">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <p className="text-xs text-red-300 font-semibold mb-1">Malicious Address #{index + 1}:</p>
+                        <span className="text-xs text-red-200 font-mono break-all bg-red-800/30 p-2 rounded block">{address}</span>
+                      </div>
+                      <div className="ml-2 text-red-400 animate-pulse">⚠️</div>
+                    </div>
                   </div>
                 ))}
               </div>
               {data.mimickedAddress && (
-                <div className="mt-3">
-                  <p className="text-xs text-red-300 mb-1">Mimicked Address:</p>
-                  <div className="bg-red-900/20 rounded p-2">
+                <div className="mt-4 p-3 bg-red-900/40 border border-red-500/60 rounded">
+                  <p className="text-sm text-red-300 font-semibold mb-2">🎯 TARGET ADDRESS BEING MIMICKED:</p>
+                  <div className="bg-red-800/40 rounded p-2">
                     <span className="text-xs text-red-200 font-mono break-all">{data.mimickedAddress}</span>
                   </div>
+                  <p className="text-xs text-red-400 mt-2">⚠️ Attackers create similar addresses to trick you into sending funds to them</p>
                 </div>
               )}
             </div>
           )}
 
           {"topDusterAddresses" in data && data.topDusterAddresses.length > 0 && (
-            <div className="bg-orange-950/30 border border-orange-500/50 rounded-lg p-4 mb-4">
-              <h4 className="font-semibold text-orange-300 mb-2">⚠️ Top Duster Addresses</h4>
-              <div className="space-y-2">
+            <div className="bg-orange-950/40 border-2 border-orange-500 rounded-lg p-4 mb-4 relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-orange-600 animate-pulse"></div>
+              <h4 className="font-bold text-orange-300 mb-3 flex items-center">
+                ⚠️ <span className="ml-2">TOP DUSTER ADDRESSES</span>
+              </h4>
+              <div className="space-y-3">
                 {data.topDusterAddresses.map((address, index) => (
-                  <div key={index} className="bg-orange-900/20 rounded p-2">
-                    <span className="text-xs text-orange-200 font-mono break-all">{address}</span>
+                  <div key={index} className="bg-orange-900/30 border border-orange-600/50 rounded p-3 relative">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <p className="text-xs text-orange-300 font-semibold mb-1">Duster #{index + 1}:</p>
+                        <span className="text-xs text-orange-200 font-mono break-all bg-orange-800/30 p-2 rounded block">{address}</span>
+                      </div>
+                      <div className="ml-2 text-orange-400 animate-pulse">🔍</div>
+                    </div>
+                    <p className="text-xs text-orange-400 mt-2">This address sent dust transactions to track your wallet</p>
                   </div>
                 ))}
+              </div>
+              <div className="mt-4 p-3 bg-orange-900/40 border border-orange-500/60 rounded">
+                <p className="text-xs text-orange-400">
+                  💡 These addresses sent small amounts to your wallet to track your transaction patterns and compromise your privacy.
+                </p>
               </div>
             </div>
           )}

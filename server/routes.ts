@@ -36,46 +36,33 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return result;
       };
 
-      // Generate realistic analysis results
-      const isHighRisk = Math.random() > 0.7; // 30% chance of high risk
+      // Always show threats for demonstration purposes
+      const isHighRisk = true; // Always show high risk for demo
       
-      const addressPoisoning: AddressPoisoningResult = isHighRisk ? {
-        riskScore: `${Math.floor(Math.random() * 35) + 65}/100`, // 65-100 for high risk
+      const addressPoisoning: AddressPoisoningResult = {
+        riskScore: `${Math.floor(Math.random() * 25) + 75}/100`, // 75-100 for high risk
         status: "HIGH RISK",
-        transactionCount: (Math.floor(Math.random() * 2000) + 2000).toLocaleString(),
+        transactionCount: (Math.floor(Math.random() * 1500) + 3500).toLocaleString(),
         fakeAddresses: [
-          generateFakeAddress(),
-          generateFakeAddress(),
-          generateFakeAddress()
-        ].slice(0, Math.floor(Math.random() * 3) + 1),
+          "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgABC",
+          "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgXYZ", 
+          "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosg123"
+        ],
         mimickedAddress: "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
-        summary: "Multiple address poisoning attempts detected! Several transactions show interactions with addresses similar to your frequent recipients. Exercise extreme caution when sending funds and always verify recipient addresses."
-      } : {
-        riskScore: `${Math.floor(Math.random() * 30)}/100`, // 0-30 for low risk
-        status: "SAFE",
-        transactionCount: (Math.floor(Math.random() * 3000) + 1000).toLocaleString(),
-        fakeAddresses: [],
-        summary: "No address poisoning attacks detected. Your wallet appears to be interacting with legitimate addresses and contracts. Continue following security best practices."
+        summary: "Critical security alert! Multiple fake addresses detected that closely mimic your frequent transaction partners. These poisoning attempts could trick you into sending funds to malicious actors. Always double-check the last few characters of recipient addresses before confirming transactions."
       };
 
-      const dusting: AccountDustingResult = isHighRisk ? {
-        riskScore: `${Math.floor(Math.random() * 30) + 50}/100`, // 50-80 for medium risk
-        status: "MEDIUM RISK",
-        transactionCount: (Math.floor(Math.random() * 1500) + 1500).toLocaleString(),
-        dustTransactionCount: (Math.floor(Math.random() * 15) + 3).toString(),
+      const dusting: AccountDustingResult = {
+        riskScore: `${Math.floor(Math.random() * 20) + 65}/100`, // 65-85 for high risk
+        status: "HIGH RISK",
+        transactionCount: (Math.floor(Math.random() * 1200) + 2800).toLocaleString(),
+        dustTransactionCount: (Math.floor(Math.random() * 8) + 12).toString(),
         topDusterAddresses: [
-          generateFakeAddress(),
-          generateFakeAddress(),
-          generateFakeAddress()
-        ].slice(0, Math.floor(Math.random() * 3) + 1),
-        summary: "Account dusting detected. Your wallet has received several small token amounts from unknown sources, possibly for tracking purposes. Consider using a new wallet for sensitive transactions."
-      } : {
-        riskScore: `${Math.floor(Math.random() * 20)}/100`, // 0-20 for low risk
-        status: "SAFE",
-        transactionCount: (Math.floor(Math.random() * 2000) + 1000).toLocaleString(),
-        dustTransactionCount: "0",
-        topDusterAddresses: [],
-        summary: "No account dusting attacks detected. All token transfers appear to be legitimate transactions. Your wallet shows normal activity patterns."
+          "DustAttacker1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZa",
+          "MaliciousBot9876543210ZYXWVUTSRQPONMLKJIHGFEDCBb", 
+          "TrackingEntity555666777888999000111222333444555c"
+        ],
+        summary: "Severe dusting attack detected! Your wallet has received multiple small-value token transfers from known malicious addresses. These 'dust' transactions are designed to track your wallet activity and compromise your privacy. The attackers are attempting to de-anonymize your transactions and monitor your financial behavior."
       };
 
       const overallRiskScore = Math.max(
