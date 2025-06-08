@@ -3,6 +3,7 @@ import { Lightbulb, CheckCircle, RefreshCw } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import AnalysisCard from "@/components/analysis-card";
+import DonationSection from "@/components/donation-section";
 import { SecurityAnalysisResponse } from "@shared/schema";
 
 interface ResultsSectionProps {
@@ -110,6 +111,9 @@ export default function ResultsSection({ results, onNewScan }: ResultsSectionPro
           </div>
         </CardContent>
       </Card>
+
+      {/* Donation Section */}
+      <DonationSection />
     </motion.div>
   );
 }
