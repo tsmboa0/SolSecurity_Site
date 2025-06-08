@@ -80,31 +80,31 @@ export default function ResultsSection({ results, onNewScan }: ResultsSectionPro
 
       {/* Security Recommendations */}
       <Card className="bg-gradient-to-br from-muted/50 to-primary/5 rounded-2xl border border-border">
-        <CardContent className="p-4 sm:p-6 lg:p-8">
-          <h3 className="text-lg font-bold text-foreground mb-4 flex items-center">
-            <Lightbulb className="text-warning w-5 h-5 mr-2" />
+        <CardContent className="p-3 sm:p-4 lg:p-6 xl:p-8">
+          <h3 className="text-base sm:text-lg lg:text-xl font-bold text-foreground mb-4 flex items-center">
+            <Lightbulb className="text-warning w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" />
             Security Recommendations
           </h3>
-          <div className="space-y-3">
+          <div className="space-y-3 sm:space-y-4">
             <div className="flex items-start space-x-3">
-              <CheckCircle className="text-success w-5 h-5 mt-0.5 flex-shrink-0" />
-              <div>
-                <div className="font-medium text-foreground">Regular Security Scans</div>
-                <div className="text-sm text-muted-foreground">Check your wallet monthly for new threats</div>
+              <CheckCircle className="text-success w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="font-medium text-foreground text-sm sm:text-base">Regular Security Scans</div>
+                <div className="text-xs sm:text-sm text-muted-foreground leading-relaxed">Check your wallet monthly for new threats</div>
               </div>
             </div>
             <div className="flex items-start space-x-3">
-              <CheckCircle className="text-success w-5 h-5 mt-0.5 flex-shrink-0" />
-              <div>
-                <div className="font-medium text-foreground">Verify Addresses</div>
-                <div className="text-sm text-muted-foreground">Always double-check recipient addresses before sending</div>
+              <CheckCircle className="text-success w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="font-medium text-foreground text-sm sm:text-base">Verify Addresses</div>
+                <div className="text-xs sm:text-sm text-muted-foreground leading-relaxed">Always double-check recipient addresses before sending</div>
               </div>
             </div>
             <div className="flex items-start space-x-3">
-              <CheckCircle className="text-success w-5 h-5 mt-0.5 flex-shrink-0" />
-              <div>
-                <div className="font-medium text-foreground">Use Hardware Wallets</div>
-                <div className="text-sm text-muted-foreground">Store large amounts in cold storage for maximum security</div>
+              <CheckCircle className="text-success w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0" />
+              <div className="flex-1 min-w-0">
+                <div className="font-medium text-foreground text-sm sm:text-base">Use Hardware Wallets</div>
+                <div className="text-xs sm:text-sm text-muted-foreground leading-relaxed">Store large amounts in cold storage for maximum security</div>
               </div>
             </div>
           </div>
