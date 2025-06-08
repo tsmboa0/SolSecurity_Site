@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Shield, Coins } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { AnalysisResult } from "@shared/schema";
+import { AddressPoisoningResult, AccountDustingResult } from "@shared/schema";
 
 interface Metric {
   label: string;
@@ -13,7 +13,7 @@ interface AnalysisCardProps {
   title: string;
   description: string;
   iconType: "shield" | "coins";
-  data: AnalysisResult;
+  data: AddressPoisoningResult | AccountDustingResult;
   additionalMetrics: Metric[];
 }
 
@@ -106,6 +106,41 @@ export default function AnalysisCard({ title, description, iconType, data, addit
               </div>
             ))}
           </div>
+
+          {/* Detailed Information */}
+          {"fakeAddresses" in data && data.fakeAddresses.length > 0 && (
+            <div className="bg-red-950/30 border border-red-500/50 rounded-lg p-4 mb-4">
+              <h4 className="font-semibold text-red-300 mb-2">🚨 Fake Addresses Detected</h4>
+              <div className="space-y-2">
+                {data.fakeAddresses.map((address, index) => (
+                  <div key={index} className="bg-red-900/20 rounded p-2">
+                    <span className="text-xs text-red-200 font-mono break-all">{address}</span>
+                  </div>
+                ))}
+              </div>
+              {data.mimickedAddress && (
+                <div className="mt-3">
+                  <p className="text-xs text-red-300 mb-1">Mimicked Address:</p>
+                  <div className="bg-red-900/20 rounded p-2">
+                    <span className="text-xs text-red-200 font-mono break-all">{data.mimickedAddress}</span>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {"topDusterAddresses" in data && data.topDusterAddresses.length > 0 && (
+            <div className="bg-orange-950/30 border border-orange-500/50 rounded-lg p-4 mb-4">
+              <h4 className="font-semibold text-orange-300 mb-2">⚠️ Top Duster Addresses</h4>
+              <div className="space-y-2">
+                {data.topDusterAddresses.map((address, index) => (
+                  <div key={index} className="bg-orange-900/20 rounded p-2">
+                    <span className="text-xs text-orange-200 font-mono break-all">{address}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className={cn(
             "rounded-lg p-4 border",

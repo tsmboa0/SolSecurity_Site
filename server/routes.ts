@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { walletAddressSchema, type SecurityAnalysisResponse, type AnalysisResult } from "@shared/schema";
+import { walletAddressSchema, type SecurityAnalysisResponse, type AddressPoisoningResult, type AccountDustingResult } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Analyze wallet security
@@ -15,8 +15,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       if (existingAnalysis) {
         const response: SecurityAnalysisResponse = {
           walletAddress: address,
-          addressPoisoning: existingAnalysis.addressPoisoningData as AnalysisResult,
-          dusting: existingAnalysis.dustingData as AnalysisResult,
+          addressPoisoning: existingAnalysis.addressPoisoningData as AddressPoisoningResult,
+          dusting: existingAnalysis.dustingData as AccountDustingResult,
           overallRiskScore: existingAnalysis.overallRiskScore,
           analyzedAt: existingAnalysis.analyzedAt,
         };
@@ -26,42 +26,55 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Simulate analysis processing time
       await new Promise(resolve => setTimeout(resolve, 8000));
 
+      // Generate fake wallet addresses for simulation
+      const generateFakeAddress = () => {
+        const chars = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+        let result = "";
+        for (let i = 0; i < 44; i++) {
+          result += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return result;
+      };
+
       // Generate realistic analysis results
       const isHighRisk = Math.random() > 0.7; // 30% chance of high risk
       
-      const addressPoisoning: AnalysisResult = isHighRisk ? {
+      const addressPoisoning: AddressPoisoningResult = isHighRisk ? {
         riskScore: `${Math.floor(Math.random() * 35) + 65}/100`, // 65-100 for high risk
         status: "HIGH RISK",
         transactionCount: (Math.floor(Math.random() * 2000) + 2000).toLocaleString(),
-        suspiciousCount: (Math.floor(Math.random() * 20) + 5).toString(),
-        lastActivity: ["15m ago", "1h ago", "3h ago"][Math.floor(Math.random() * 3)],
+        fakeAddresses: [
+          generateFakeAddress(),
+          generateFakeAddress(),
+          generateFakeAddress()
+        ].slice(0, Math.floor(Math.random() * 3) + 1),
+        mimickedAddress: "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
         summary: "Multiple address poisoning attempts detected! Several transactions show interactions with addresses similar to your frequent recipients. Exercise extreme caution when sending funds and always verify recipient addresses."
       } : {
         riskScore: `${Math.floor(Math.random() * 30)}/100`, // 0-30 for low risk
         status: "SAFE",
         transactionCount: (Math.floor(Math.random() * 3000) + 1000).toLocaleString(),
-        suspiciousCount: "0",
-        lastActivity: ["2h ago", "4h ago", "1d ago"][Math.floor(Math.random() * 3)],
+        fakeAddresses: [],
         summary: "No address poisoning attacks detected. Your wallet appears to be interacting with legitimate addresses and contracts. Continue following security best practices."
       };
 
-      const dusting: AnalysisResult = isHighRisk ? {
+      const dusting: AccountDustingResult = isHighRisk ? {
         riskScore: `${Math.floor(Math.random() * 30) + 50}/100`, // 50-80 for medium risk
         status: "MEDIUM RISK",
         transactionCount: (Math.floor(Math.random() * 1500) + 1500).toLocaleString(),
-        tokenTransfers: (Math.floor(Math.random() * 1500) + 1500).toLocaleString(),
-        dustCount: (Math.floor(Math.random() * 15) + 3).toString(),
-        riskLevel: "HIGH",
-        lastActivity: ["30m ago", "2h ago", "5h ago"][Math.floor(Math.random() * 3)],
+        dustTransactionCount: (Math.floor(Math.random() * 15) + 3).toString(),
+        topDusterAddresses: [
+          generateFakeAddress(),
+          generateFakeAddress(),
+          generateFakeAddress()
+        ].slice(0, Math.floor(Math.random() * 3) + 1),
         summary: "Account dusting detected. Your wallet has received several small token amounts from unknown sources, possibly for tracking purposes. Consider using a new wallet for sensitive transactions."
       } : {
         riskScore: `${Math.floor(Math.random() * 20)}/100`, // 0-20 for low risk
         status: "SAFE",
         transactionCount: (Math.floor(Math.random() * 2000) + 1000).toLocaleString(),
-        tokenTransfers: (Math.floor(Math.random() * 2000) + 1000).toLocaleString(),
-        dustCount: "0",
-        riskLevel: "LOW",
-        lastActivity: ["1h ago", "3h ago", "6h ago"][Math.floor(Math.random() * 3)],
+        dustTransactionCount: "0",
+        topDusterAddresses: [],
         summary: "No account dusting attacks detected. All token transfers appear to be legitimate transactions. Your wallet shows normal activity patterns."
       };
 

@@ -51,8 +51,8 @@ export default function ResultsSection({ results, onNewScan }: ResultsSectionPro
           data={results.addressPoisoning}
           additionalMetrics={[
             { label: "Transactions Analyzed", value: results.addressPoisoning.transactionCount },
-            { label: "Suspicious Patterns", value: results.addressPoisoning.suspiciousCount || "0" },
-            { label: "Last Activity", value: results.addressPoisoning.lastActivity }
+            { label: "Fake Addresses", value: results.addressPoisoning.fakeAddresses.length.toString() },
+            { label: "Mimicked Address", value: results.addressPoisoning.mimickedAddress ? "Detected" : "None" }
           ]}
         />
 
@@ -63,9 +63,9 @@ export default function ResultsSection({ results, onNewScan }: ResultsSectionPro
           iconType="coins"
           data={results.dusting}
           additionalMetrics={[
-            { label: "Token Transfers", value: results.dusting.tokenTransfers || "0" },
-            { label: "Dust Transactions", value: results.dusting.dustCount || "0" },
-            { label: "Risk Level", value: results.dusting.riskLevel || "LOW" }
+            { label: "Transactions Analyzed", value: results.dusting.transactionCount },
+            { label: "Dust Transactions", value: results.dusting.dustTransactionCount },
+            { label: "Top Dusters", value: results.dusting.topDusterAddresses.length.toString() }
           ]}
         />
       </div>

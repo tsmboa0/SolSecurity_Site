@@ -28,23 +28,30 @@ export const walletAddressSchema = z.object({
 
 export type WalletAddressInput = z.infer<typeof walletAddressSchema>;
 
-// Analysis result types
-export interface AnalysisResult {
+// Address Poisoning Analysis Result
+export interface AddressPoisoningResult {
   riskScore: string;
   status: string;
   transactionCount: string;
-  suspiciousCount?: string;
-  dustCount?: string;
-  lastActivity: string;
-  riskLevel?: string;
-  tokenTransfers?: string;
+  fakeAddresses: string[];
+  mimickedAddress?: string;
+  summary: string;
+}
+
+// Account Dusting Analysis Result
+export interface AccountDustingResult {
+  riskScore: string;
+  status: string;
+  transactionCount: string;
+  dustTransactionCount: string;
+  topDusterAddresses: string[];
   summary: string;
 }
 
 export interface SecurityAnalysisResponse {
   walletAddress: string;
-  addressPoisoning: AnalysisResult;
-  dusting: AnalysisResult;
+  addressPoisoning: AddressPoisoningResult;
+  dusting: AccountDustingResult;
   overallRiskScore: number;
   analyzedAt: string;
 }
