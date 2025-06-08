@@ -58,17 +58,17 @@ export default function ScannerForm({ onScanStart, onScanComplete, onScanError }
   };
 
   return (
-    <Card className="bg-white rounded-2xl shadow-lg border border-slate-200 mb-8">
-      <CardContent className="p-8">
+    <Card className="bg-card border border-border rounded-2xl shadow-lg mb-6 sm:mb-8">
+      <CardContent className="p-4 sm:p-6 lg:p-8">
         <div className="max-w-2xl mx-auto">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
               <FormField
                 control={form.control}
                 name="address"
                 render={({ field }) => (
                   <FormItem>
-                    <Label htmlFor="walletAddress" className="text-sm font-medium text-slate-700">
+                    <Label htmlFor="walletAddress" className="text-sm font-medium text-foreground">
                       Solana Wallet Address
                     </Label>
                     <FormControl>
@@ -77,16 +77,16 @@ export default function ScannerForm({ onScanStart, onScanComplete, onScanError }
                           {...field}
                           id="walletAddress"
                           placeholder="Enter your Solana wallet address (e.g., 7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU)"
-                          className="w-full px-4 py-3 pr-12 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm font-mono"
+                          className="w-full px-4 py-3 pr-12 bg-background border border-input rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm font-mono placeholder:text-xs sm:placeholder:text-sm"
                           disabled={analyzeMutation.isPending}
                         />
                         <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-                          <Wallet className="text-slate-400 w-5 h-5" />
+                          <Wallet className="text-muted-foreground w-5 h-5" />
                         </div>
                       </div>
                     </FormControl>
                     <FormMessage />
-                    <div className="flex items-center space-x-2 text-xs text-slate-500 mt-2">
+                    <div className="flex items-center space-x-2 text-xs text-muted-foreground mt-2">
                       <Info className="w-3 h-3" />
                       <span>Analysis typically takes 10-30 seconds depending on transaction history</span>
                     </div>
@@ -97,7 +97,7 @@ export default function ScannerForm({ onScanStart, onScanComplete, onScanError }
               <Button
                 type="submit"
                 disabled={analyzeMutation.isPending}
-                className="w-full bg-gradient-to-r from-primary to-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:from-blue-700 hover:to-blue-700 transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                className="w-full bg-gradient-to-r from-[hsl(var(--solana-green))] to-[hsl(var(--solana-purple))] text-white py-3 px-6 rounded-lg font-medium hover:opacity-90 transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               >
                 {analyzeMutation.isPending ? (
                   <>

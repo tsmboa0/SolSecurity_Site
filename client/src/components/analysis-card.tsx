@@ -39,17 +39,17 @@ export default function AnalysisCard({ title, description, iconType, data, addit
     >
       <Card 
         className={cn(
-          "bg-white rounded-2xl shadow-lg border-2 p-8 transition-all duration-300",
+          "bg-card rounded-2xl shadow-lg border-2 transition-all duration-300",
           isHighRisk && "border-danger shadow-danger/20",
           isMediumRisk && "border-warning shadow-warning/20",
           !isHighRisk && !isMediumRisk && "border-success shadow-success/20"
         )}
       >
-        <CardContent className="p-0">
-          <div className="flex items-start justify-between mb-6">
+        <CardContent className="p-4 sm:p-6 lg:p-8">
+          <div className="flex flex-col sm:flex-row items-start justify-between mb-6 space-y-4 sm:space-y-0">
             <div className="flex items-center space-x-3">
               <div className={cn(
-                "w-12 h-12 rounded-lg flex items-center justify-center",
+                "w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0",
                 isHighRisk && "bg-danger/10 text-danger",
                 isMediumRisk && "bg-warning/10 text-warning",
                 !isHighRisk && !isMediumRisk && "bg-success/10 text-success"
@@ -57,12 +57,12 @@ export default function AnalysisCard({ title, description, iconType, data, addit
                 <Icon className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-slate-900">{title}</h3>
-                <p className="text-slate-600">{description}</p>
+                <h3 className="text-lg sm:text-xl font-bold text-foreground">{title}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground">{description}</p>
               </div>
             </div>
-            <div className="text-right">
-              <div className="text-2xl font-bold mb-1 text-slate-900">{data.riskScore}</div>
+            <div className="text-right w-full sm:w-auto">
+              <div className="text-xl sm:text-2xl font-bold mb-1 text-foreground">{data.riskScore}</div>
               <div className={cn(
                 "text-sm font-medium",
                 isHighRisk && "text-danger",
@@ -74,18 +74,18 @@ export default function AnalysisCard({ title, description, iconType, data, addit
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
             {additionalMetrics.map((metric, index) => (
-              <div key={index} className="bg-slate-50 rounded-lg p-4">
-                <div className="text-sm text-slate-600 mb-1">{metric.label}</div>
-                <div className="text-2xl font-bold text-slate-900">{metric.value}</div>
+              <div key={index} className="bg-muted/50 rounded-lg p-4">
+                <div className="text-sm text-muted-foreground mb-1">{metric.label}</div>
+                <div className="text-lg sm:text-2xl font-bold text-foreground">{metric.value}</div>
               </div>
             ))}
           </div>
 
-          <div className="bg-slate-50 rounded-lg p-4">
-            <h4 className="font-semibold text-slate-900 mb-2">Analysis Summary</h4>
-            <p className="text-slate-700 text-sm">{data.summary}</p>
+          <div className="bg-muted/50 rounded-lg p-4">
+            <h4 className="font-semibold text-foreground mb-2">Analysis Summary</h4>
+            <p className="text-muted-foreground text-sm">{data.summary}</p>
           </div>
         </CardContent>
       </Card>

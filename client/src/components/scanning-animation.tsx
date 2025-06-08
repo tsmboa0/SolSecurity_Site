@@ -39,21 +39,21 @@ export default function ScanningAnimation() {
   }, []);
 
   return (
-    <Card className="bg-white rounded-2xl shadow-lg border border-slate-200 mb-8">
-      <CardContent className="p-8">
+    <Card className="bg-card border border-border rounded-2xl shadow-lg mb-6 sm:mb-8">
+      <CardContent className="p-4 sm:p-6 lg:p-8">
         <div className="text-center">
           <motion.div 
             className="relative w-16 h-16 mx-auto mb-4"
             animate={{ rotate: 360 }}
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
           >
-            <div className="absolute inset-0 border-4 border-slate-200 rounded-full"></div>
+            <div className="absolute inset-0 border-4 border-border rounded-full"></div>
             <div className="absolute inset-0 border-4 border-primary border-t-transparent rounded-full"></div>
             <Shield className="text-primary absolute inset-0 w-6 h-6 m-auto" />
           </motion.div>
           
-          <h3 className="text-lg font-semibold text-slate-900 mb-2">Analyzing Wallet Security</h3>
-          <p className="text-slate-600 mb-4">Scanning for address poisoning and account dusting attacks...</p>
+          <h3 className="text-lg font-semibold text-foreground mb-2">Analyzing Wallet Security</h3>
+          <p className="text-muted-foreground mb-4">Scanning for address poisoning and account dusting attacks...</p>
           
           <div className="w-full mb-6">
             <Progress value={progress} className="h-2" />
@@ -63,7 +63,7 @@ export default function ScanningAnimation() {
             {scanningSteps.map((step, index) => (
               <motion.div
                 key={index}
-                className="flex items-center justify-center space-x-2"
+                className="flex items-center justify-center space-x-2 px-2"
                 initial={{ opacity: 0.5 }}
                 animate={{ 
                   opacity: index <= currentStep ? 1 : 0.5,
@@ -72,18 +72,18 @@ export default function ScanningAnimation() {
                 transition={{ duration: 0.3 }}
               >
                 {index < currentStep ? (
-                  <CheckCircle className="w-4 h-4 text-success" />
+                  <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />
                 ) : index === currentStep ? (
                   <motion.div
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 1, repeat: Infinity }}
                   >
-                    <Circle className="w-4 h-4 text-primary" />
+                    <Circle className="w-4 h-4 text-primary flex-shrink-0" />
                   </motion.div>
                 ) : (
-                  <Circle className="w-4 h-4 text-slate-300" />
+                  <Circle className="w-4 h-4 text-muted-foreground/50 flex-shrink-0" />
                 )}
-                <span className={`text-sm ${index <= currentStep ? 'text-slate-900' : 'text-slate-500'}`}>
+                <span className={`text-xs sm:text-sm text-center ${index <= currentStep ? 'text-foreground' : 'text-muted-foreground'}`}>
                   {step.text}
                 </span>
               </motion.div>

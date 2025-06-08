@@ -3,32 +3,35 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(0, 0%, 100%);
-  --foreground: hsl(20, 14.3%, 4.1%);
-  --muted: hsl(60, 4.8%, 95.9%);
-  --muted-foreground: hsl(25, 5.3%, 44.7%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(20, 14.3%, 4.1%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(20, 14.3%, 4.1%);
-  --border: hsl(20, 5.9%, 90%);
-  --input: hsl(20, 5.9%, 90%);
-  --primary: hsl(214, 84%, 47%);
-  --primary-foreground: hsl(214, 100%, 97%);
-  --secondary: hsl(60, 4.8%, 95.9%);
-  --secondary-foreground: hsl(24, 9.8%, 10%);
-  --accent: hsl(60, 4.8%, 95.9%);
-  --accent-foreground: hsl(24, 9.8%, 10%);
-  --destructive: hsl(0, 84.2%, 60.2%);
-  --destructive-foreground: hsl(60, 9.1%, 97.8%);
-  --ring: hsl(20, 14.3%, 4.1%);
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(163, 88%, 50%);
+  --primary-foreground: hsl(163, 100%, 5%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
   --radius: 0.5rem;
-  --success: hsl(160, 84%, 39%);
-  --success-foreground: hsl(160, 100%, 97%);
-  --warning: hsl(45, 93%, 47%);
-  --warning-foreground: hsl(45, 100%, 97%);
+  --success: hsl(120, 100%, 50%);
+  --success-foreground: hsl(120, 100%, 5%);
+  --warning: hsl(45, 93%, 55%);
+  --warning-foreground: hsl(45, 100%, 5%);
   --danger: hsl(0, 84%, 60%);
   --danger-foreground: hsl(0, 100%, 97%);
+  --solana-green: hsl(163, 88%, 50%);
+  --solana-purple: hsl(270, 100%, 70%);
+  --solana-dark: hsl(240, 10%, 3.9%);
 }
 
 .dark {
@@ -42,8 +45,8 @@
   --card-foreground: hsl(0, 0%, 98%);
   --border: hsl(240, 3.7%, 15.9%);
   --input: hsl(240, 3.7%, 15.9%);
-  --primary: hsl(214, 84%, 47%);
-  --primary-foreground: hsl(214, 100%, 97%);
+  --primary: hsl(163, 88%, 50%);
+  --primary-foreground: hsl(163, 100%, 5%);
   --secondary: hsl(240, 3.7%, 15.9%);
   --secondary-foreground: hsl(0, 0%, 98%);
   --accent: hsl(240, 3.7%, 15.9%);
@@ -52,12 +55,47 @@
   --destructive-foreground: hsl(0, 0%, 98%);
   --ring: hsl(240, 4.9%, 83.9%);
   --radius: 0.5rem;
-  --success: hsl(160, 84%, 39%);
-  --success-foreground: hsl(160, 100%, 97%);
-  --warning: hsl(45, 93%, 47%);
-  --warning-foreground: hsl(45, 100%, 97%);
+  --success: hsl(120, 100%, 50%);
+  --success-foreground: hsl(120, 100%, 5%);
+  --warning: hsl(45, 93%, 55%);
+  --warning-foreground: hsl(45, 100%, 5%);
   --danger: hsl(0, 84%, 60%);
   --danger-foreground: hsl(0, 100%, 97%);
+  --solana-green: hsl(163, 88%, 50%);
+  --solana-purple: hsl(270, 100%, 70%);
+  --solana-dark: hsl(240, 10%, 3.9%);
+}
+
+.light {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(163, 88%, 50%);
+  --primary-foreground: hsl(163, 100%, 5%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  --success: hsl(120, 100%, 50%);
+  --success-foreground: hsl(120, 100%, 5%);
+  --warning: hsl(45, 93%, 55%);
+  --warning-foreground: hsl(45, 100%, 5%);
+  --danger: hsl(0, 84%, 60%);
+  --danger-foreground: hsl(0, 100%, 97%);
+  --solana-green: hsl(163, 88%, 50%);
+  --solana-purple: hsl(270, 100%, 70%);
+  --solana-dark: hsl(240, 10%, 3.9%);
 }
 
 @layer base {
