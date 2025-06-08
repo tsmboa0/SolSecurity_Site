@@ -26,6 +26,10 @@ export default function Home() {
     setIsScanning(false);
   };
 
+  const handleNewScan = () => {
+    setResults(null);
+  };
+
   return (
     <div className="min-h-screen bg-background dark:bg-background light:bg-slate-50 transition-colors">
       {/* Header */}
@@ -86,7 +90,7 @@ export default function Home() {
         {isScanning && <ScanningAnimation />}
 
         {/* Results Section */}
-        {results && !isScanning && <ResultsSection results={results} />}
+        {results && !isScanning && <ResultsSection results={results} onNewScan={handleNewScan} />}
       </main>
 
       {/* Footer */}

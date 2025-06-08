@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
-import { Lightbulb, CheckCircle } from "lucide-react";
+import { Lightbulb, CheckCircle, RefreshCw } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import AnalysisCard from "@/components/analysis-card";
 import { SecurityAnalysisResponse } from "@shared/schema";
 
 interface ResultsSectionProps {
   results: SecurityAnalysisResponse;
+  onNewScan?: () => void;
 }
 
-export default function ResultsSection({ results }: ResultsSectionProps) {
+export default function ResultsSection({ results, onNewScan }: ResultsSectionProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -16,6 +18,29 @@ export default function ResultsSection({ results }: ResultsSectionProps) {
       transition={{ duration: 0.5 }}
       className="space-y-6"
     >
+      {/* Scan Summary Header */}
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 p-4 sm:p-6 bg-card border border-border rounded-2xl">
+        <div>
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Security Analysis Complete</h2>
+          <p className="text-muted-foreground">
+            Scanned wallet: <span className="font-mono text-sm break-all">{results.walletAddress}</span>
+          </p>
+          <p className="text-xs text-muted-foreground mt-1">
+            Analyzed on {new Date(results.analyzedAt).toLocaleDateString()} at {new Date(results.analyzedAt).toLocaleTimeString()}
+          </p>
+        </div>
+        {onNewScan && (
+          <Button
+            onClick={onNewScan}
+            variant="outline"
+            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+          >
+            <RefreshCw className="w-4 h-4 mr-2" />
+            Scan New Address
+          </Button>
+        )}
+      </div>
+
       {/* Analysis Results - Responsive Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         {/* Address Poisoning Analysis */}

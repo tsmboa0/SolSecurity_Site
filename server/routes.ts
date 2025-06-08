@@ -48,6 +48,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const dusting: AnalysisResult = isHighRisk ? {
         riskScore: `${Math.floor(Math.random() * 30) + 50}/100`, // 50-80 for medium risk
         status: "MEDIUM RISK",
+        transactionCount: (Math.floor(Math.random() * 1500) + 1500).toLocaleString(),
         tokenTransfers: (Math.floor(Math.random() * 1500) + 1500).toLocaleString(),
         dustCount: (Math.floor(Math.random() * 15) + 3).toString(),
         riskLevel: "HIGH",
@@ -56,6 +57,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       } : {
         riskScore: `${Math.floor(Math.random() * 20)}/100`, // 0-20 for low risk
         status: "SAFE",
+        transactionCount: (Math.floor(Math.random() * 2000) + 1000).toLocaleString(),
         tokenTransfers: (Math.floor(Math.random() * 2000) + 1000).toLocaleString(),
         dustCount: "0",
         riskLevel: "LOW",
