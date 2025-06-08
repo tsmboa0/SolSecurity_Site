@@ -3,6 +3,7 @@ import { Lightbulb, CheckCircle, RefreshCw } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import AnalysisCard from "@/components/analysis-card";
+import ShareButton from "@/components/share-button";
 import DonationSection from "@/components/donation-section";
 import { SecurityAnalysisResponse } from "@shared/schema";
 
@@ -111,6 +112,12 @@ export default function ResultsSection({ results, onNewScan }: ResultsSectionPro
           </div>
         </CardContent>
       </Card>
+
+      {/* Share Button */}
+      <ShareButton 
+        walletAddress={results.walletAddress} 
+        overallRiskScore={results.overallRiskScore} 
+      />
 
       {/* Donation Section */}
       <DonationSection />
