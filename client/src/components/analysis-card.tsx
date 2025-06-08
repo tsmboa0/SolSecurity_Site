@@ -110,12 +110,12 @@ export default function AnalysisCard({ title, description, iconType, data, addit
             </div>
           </div>
 
-          {/* Metrics Grid - Mobile Responsive */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
+          {/* Metrics Grid - Horizontal on Mobile */}
+          <div className="grid grid-cols-3 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-4 sm:mb-6">
             {additionalMetrics.map((metric, index) => (
-              <div key={index} className="bg-muted/50 rounded-lg p-3 sm:p-4">
-                <div className="text-xs sm:text-sm text-muted-foreground mb-1 leading-tight">{metric.label}</div>
-                <div className="text-base sm:text-lg lg:text-xl xl:text-2xl font-bold text-foreground break-all">{metric.value}</div>
+              <div key={index} className="bg-muted/50 rounded-lg p-2 sm:p-3 lg:p-4">
+                <div className="text-xs sm:text-sm text-muted-foreground mb-1 leading-tight text-center sm:text-left">{metric.label}</div>
+                <div className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold text-foreground break-all text-center sm:text-left">{metric.value}</div>
               </div>
             ))}
           </div>
