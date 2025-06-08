@@ -50,8 +50,8 @@ export default function ResultsSection({ results, onNewScan }: ResultsSectionPro
         </div>
       </div>
 
-      {/* Analysis Results - Mobile First Responsive Grid */}
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-6">
+      {/* Analysis Results - Responsive Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {/* Address Poisoning Analysis */}
         <AnalysisCard
           title="Address Poisoning Analysis"
