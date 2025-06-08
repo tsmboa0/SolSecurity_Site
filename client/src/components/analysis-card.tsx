@@ -40,9 +40,9 @@ export default function AnalysisCard({ title, description, iconType, data, addit
       <Card 
         className={cn(
           "bg-card rounded-2xl shadow-lg border-2 transition-all duration-300",
-          isHighRisk && "border-danger shadow-danger/20",
-          isMediumRisk && "border-warning shadow-warning/20",
-          !isHighRisk && !isMediumRisk && "border-success shadow-success/20"
+          isHighRisk && "border-red-500 shadow-red-500/30 bg-red-950/10",
+          isMediumRisk && "border-orange-500 shadow-orange-500/30 bg-orange-950/10",
+          !isHighRisk && !isMediumRisk && "border-green-500 shadow-green-500/30 bg-green-950/10"
         )}
       >
         <CardContent className="p-4 sm:p-6 lg:p-8">

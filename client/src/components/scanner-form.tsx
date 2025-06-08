@@ -97,7 +97,7 @@ export default function ScannerForm({ onScanStart, onScanComplete, onScanError }
               <Button
                 type="submit"
                 disabled={analyzeMutation.isPending}
-                className="w-full bg-gradient-to-r from-[hsl(var(--solana-green))] to-[hsl(var(--solana-purple))] text-white py-3 px-6 rounded-lg font-medium hover:opacity-90 transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                className="w-full bg-gradient-to-r from-[#14F195] to-[#9945FF] text-white py-3 px-6 rounded-lg font-medium hover:opacity-90 transition-all duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               >
                 {analyzeMutation.isPending ? (
                   <>

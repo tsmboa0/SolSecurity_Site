@@ -37,7 +37,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-[hsl(var(--solana-green))] to-[hsl(var(--solana-purple))] rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-[#14F195] to-[#9945FF] rounded-lg flex items-center justify-center">
                 <Shield className="text-white w-4 h-4" />
               </div>
               <h1 className="text-xl font-bold text-foreground dark:text-foreground light:text-slate-900">SolSecurity</h1>
@@ -71,7 +71,7 @@ export default function Home() {
         <div className="text-center mb-8 sm:mb-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
             Is your wallet being{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[hsl(var(--solana-green))] to-[hsl(var(--solana-purple))]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#14F195] to-[#9945FF]">
               exploited?
             </span>
           </h1>

@@ -13,7 +13,7 @@
   --card-foreground: hsl(0, 0%, 98%);
   --border: hsl(240, 3.7%, 15.9%);
   --input: hsl(240, 3.7%, 15.9%);
-  --primary: hsl(163, 88%, 50%);
+  --primary: hsl(163, 72%, 48%);
   --primary-foreground: hsl(163, 100%, 5%);
   --secondary: hsl(240, 3.7%, 15.9%);
   --secondary-foreground: hsl(0, 0%, 98%);
@@ -23,15 +23,16 @@
   --destructive-foreground: hsl(0, 0%, 98%);
   --ring: hsl(240, 4.9%, 83.9%);
   --radius: 0.5rem;
-  --success: hsl(120, 100%, 50%);
-  --success-foreground: hsl(120, 100%, 5%);
-  --warning: hsl(45, 93%, 55%);
-  --warning-foreground: hsl(45, 100%, 5%);
-  --danger: hsl(0, 84%, 60%);
+  --success: hsl(142, 76%, 36%);
+  --success-foreground: hsl(142, 100%, 5%);
+  --warning: hsl(38, 92%, 50%);
+  --warning-foreground: hsl(38, 100%, 5%);
+  --danger: hsl(0, 72%, 51%);
   --danger-foreground: hsl(0, 100%, 97%);
-  --solana-green: hsl(163, 88%, 50%);
-  --solana-purple: hsl(270, 100%, 70%);
-  --solana-dark: hsl(240, 10%, 3.9%);
+  --solana-green: hsl(163, 72%, 48%);
+  --solana-purple: hsl(260, 100%, 65%);
+  --solana-gradient-start: hsl(163, 72%, 48%);
+  --solana-gradient-end: hsl(260, 100%, 65%);
 }
 
 .dark {
@@ -45,7 +46,7 @@
   --card-foreground: hsl(0, 0%, 98%);
   --border: hsl(240, 3.7%, 15.9%);
   --input: hsl(240, 3.7%, 15.9%);
-  --primary: hsl(163, 88%, 50%);
+  --primary: hsl(163, 72%, 48%);
   --primary-foreground: hsl(163, 100%, 5%);
   --secondary: hsl(240, 3.7%, 15.9%);
   --secondary-foreground: hsl(0, 0%, 98%);
@@ -55,15 +56,16 @@
   --destructive-foreground: hsl(0, 0%, 98%);
   --ring: hsl(240, 4.9%, 83.9%);
   --radius: 0.5rem;
-  --success: hsl(120, 100%, 50%);
-  --success-foreground: hsl(120, 100%, 5%);
-  --warning: hsl(45, 93%, 55%);
-  --warning-foreground: hsl(45, 100%, 5%);
-  --danger: hsl(0, 84%, 60%);
+  --success: hsl(142, 76%, 36%);
+  --success-foreground: hsl(142, 100%, 5%);
+  --warning: hsl(38, 92%, 50%);
+  --warning-foreground: hsl(38, 100%, 5%);
+  --danger: hsl(0, 72%, 51%);
   --danger-foreground: hsl(0, 100%, 97%);
-  --solana-green: hsl(163, 88%, 50%);
-  --solana-purple: hsl(270, 100%, 70%);
-  --solana-dark: hsl(240, 10%, 3.9%);
+  --solana-green: hsl(163, 72%, 48%);
+  --solana-purple: hsl(260, 100%, 65%);
+  --solana-gradient-start: hsl(163, 72%, 48%);
+  --solana-gradient-end: hsl(260, 100%, 65%);
 }
 
 .light {
@@ -77,7 +79,7 @@
   --card-foreground: hsl(20, 14.3%, 4.1%);
   --border: hsl(20, 5.9%, 90%);
   --input: hsl(20, 5.9%, 90%);
-  --primary: hsl(163, 88%, 50%);
+  --primary: hsl(163, 72%, 48%);
   --primary-foreground: hsl(163, 100%, 5%);
   --secondary: hsl(60, 4.8%, 95.9%);
   --secondary-foreground: hsl(24, 9.8%, 10%);
@@ -87,15 +89,16 @@
   --destructive-foreground: hsl(60, 9.1%, 97.8%);
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
-  --success: hsl(120, 100%, 50%);
-  --success-foreground: hsl(120, 100%, 5%);
-  --warning: hsl(45, 93%, 55%);
-  --warning-foreground: hsl(45, 100%, 5%);
-  --danger: hsl(0, 84%, 60%);
+  --success: hsl(142, 76%, 36%);
+  --success-foreground: hsl(142, 100%, 5%);
+  --warning: hsl(38, 92%, 50%);
+  --warning-foreground: hsl(38, 100%, 5%);
+  --danger: hsl(0, 72%, 51%);
   --danger-foreground: hsl(0, 100%, 97%);
-  --solana-green: hsl(163, 88%, 50%);
-  --solana-purple: hsl(270, 100%, 70%);
-  --solana-dark: hsl(240, 10%, 3.9%);
+  --solana-green: hsl(163, 72%, 48%);
+  --solana-purple: hsl(260, 100%, 65%);
+  --solana-gradient-start: hsl(163, 72%, 48%);
+  --solana-gradient-end: hsl(260, 100%, 65%);
 }
 
 @layer base {
