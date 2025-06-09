@@ -1,3 +1,72 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"inter"} ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/55c55f0601d81cf3-s.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/26a46d62cd723877-s.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/97e0cb1ae144a2a9-s.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/581909926a08bbc8-s.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/df0a9ae256c0569c-s.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/8e9860b6e62d6359-s.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/e4af272ccee01ff0-s.p.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}@font-face {font-family: 'Inter Fallback';src: local("Arial");ascent-override: 90.44%;descent-override: 22.52%;line-gap-override: 0.00%;size-adjust: 107.12%
+}.__className_e8ce0c {font-family: 'Inter', 'Inter Fallback';font-style: normal
+}
+
 /*!*************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./app/globals.css ***!
   \*************************************************************************************************************************************************************************************************************************************************************/
@@ -650,10 +719,6 @@ video {
   margin-left: 0.875rem;
   margin-right: 0.875rem;
 }
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -966,9 +1031,6 @@ video {
   max-width: -moz-max-content;
   max-width: max-content;
 }
-.max-w-md {
-  max-width: 28rem;
-}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1155,11 +1217,6 @@ video {
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
-.space-x-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
 .space-y-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1289,10 +1346,16 @@ video {
   border-color: rgb(59 130 246 / 0.3);
 }
 .border-border {
-  border-color: var(--border);
+  border-color: hsl(var(--border));
+}
+.border-border\/50 {
+  border-color: hsl(var(--border) / 0.5);
 }
 .border-destructive {
-  border-color: var(--destructive);
+  border-color: hsl(var(--destructive));
+}
+.border-destructive\/50 {
+  border-color: hsl(var(--destructive) / 0.5);
 }
 .border-green-500 {
   --tw-border-opacity: 1;
@@ -1302,7 +1365,7 @@ video {
   border-color: rgb(34 197 94 / 0.5);
 }
 .border-input {
-  border-color: var(--input);
+  border-color: hsl(var(--input));
 }
 .border-orange-500 {
   --tw-border-opacity: 1;
@@ -1318,7 +1381,7 @@ video {
   border-color: rgb(234 88 12 / 0.5);
 }
 .border-primary {
-  border-color: var(--primary);
+  border-color: hsl(var(--primary));
 }
 .border-purple-500\/30 {
   border-color: rgb(168 85 247 / 0.3);
@@ -1359,29 +1422,28 @@ video {
   background-color: var(--color-bg);
 }
 .bg-accent {
-  background-color: var(--accent);
+  background-color: hsl(var(--accent));
 }
 .bg-background {
-  background-color: var(--background);
+  background-color: hsl(var(--background));
+}
+.bg-background\/50 {
+  background-color: hsl(var(--background) / 0.5);
 }
 .bg-black\/80 {
   background-color: rgb(0 0 0 / 0.8);
 }
 .bg-border {
-  background-color: var(--border);
+  background-color: hsl(var(--border));
 }
 .bg-card {
-  background-color: var(--card);
+  background-color: hsl(var(--card));
 }
 .bg-destructive {
-  background-color: var(--destructive);
+  background-color: hsl(var(--destructive));
 }
 .bg-foreground {
-  background-color: var(--foreground);
-}
-.bg-gray-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+  background-color: hsl(var(--foreground));
 }
 .bg-green-500\/20 {
   background-color: rgb(34 197 94 / 0.2);
@@ -1393,7 +1455,13 @@ video {
   background-color: rgb(5 46 22 / 0.3);
 }
 .bg-muted {
-  background-color: var(--muted);
+  background-color: hsl(var(--muted));
+}
+.bg-muted\/30 {
+  background-color: hsl(var(--muted) / 0.3);
+}
+.bg-muted\/50 {
+  background-color: hsl(var(--muted) / 0.5);
 }
 .bg-orange-500\/20 {
   background-color: rgb(249 115 22 / 0.2);
@@ -1417,10 +1485,10 @@ video {
   background-color: rgb(67 20 7 / 0.4);
 }
 .bg-popover {
-  background-color: var(--popover);
+  background-color: hsl(var(--popover));
 }
 .bg-primary {
-  background-color: var(--primary);
+  background-color: hsl(var(--primary));
 }
 .bg-red-500 {
   --tw-bg-opacity: 1;
@@ -1451,7 +1519,7 @@ video {
   background-color: rgb(69 10 10 / 0.4);
 }
 .bg-secondary {
-  background-color: var(--secondary);
+  background-color: hsl(var(--secondary));
 }
 .bg-sidebar {
   background-color: var(--sidebar-background);
@@ -1486,6 +1554,11 @@ video {
 .from-blue-950\/30 {
   --tw-gradient-from: rgb(23 37 84 / 0.3) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(23 37 84 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.from-muted\/50 {
+  --tw-gradient-from: hsl(var(--muted) / 0.5) var(--tw-gradient-from-position);
+  --tw-gradient-to: hsl(var(--muted) / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 .from-orange-500 {
@@ -1528,6 +1601,9 @@ video {
 }
 .to-pink-950\/30 {
   --tw-gradient-to: rgb(80 7 36 / 0.3) var(--tw-gradient-to-position);
+}
+.to-primary\/5 {
+  --tw-gradient-to: hsl(var(--primary) / 0.05) var(--tw-gradient-to-position);
 }
 .to-red-600 {
   --tw-gradient-to: #dc2626 var(--tw-gradient-to-position);
@@ -1676,9 +1752,6 @@ video {
 .pt-4 {
   padding-top: 1rem;
 }
-.pt-6 {
-  padding-top: 1.5rem;
-}
 .text-left {
   text-align: left;
 }
@@ -1756,34 +1829,29 @@ video {
   letter-spacing: 0.1em;
 }
 .text-accent-foreground {
-  color: var(--accent-foreground);
+  color: hsl(var(--accent-foreground));
 }
 .text-blue-400 {
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity, 1));
 }
 .text-card-foreground {
-  color: var(--card-foreground);
+  color: hsl(var(--card-foreground));
 }
 .text-current {
   color: currentColor;
 }
 .text-destructive {
-  color: var(--destructive);
+  color: hsl(var(--destructive));
 }
 .text-destructive-foreground {
-  color: var(--destructive-foreground);
+  color: hsl(var(--destructive-foreground));
 }
 .text-foreground {
-  color: var(--foreground);
+  color: hsl(var(--foreground));
 }
-.text-gray-600 {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity, 1));
-}
-.text-gray-900 {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity, 1));
+.text-foreground\/50 {
+  color: hsl(var(--foreground) / 0.5);
 }
 .text-green-200 {
   --tw-text-opacity: 1;
@@ -1798,7 +1866,10 @@ video {
   color: rgb(74 222 128 / var(--tw-text-opacity, 1));
 }
 .text-muted-foreground {
-  color: var(--muted-foreground);
+  color: hsl(var(--muted-foreground));
+}
+.text-muted-foreground\/50 {
+  color: hsl(var(--muted-foreground) / 0.5);
 }
 .text-orange-200 {
   --tw-text-opacity: 1;
@@ -1813,13 +1884,13 @@ video {
   color: rgb(251 146 60 / var(--tw-text-opacity, 1));
 }
 .text-popover-foreground {
-  color: var(--popover-foreground);
+  color: hsl(var(--popover-foreground));
 }
 .text-primary {
-  color: var(--primary);
+  color: hsl(var(--primary));
 }
 .text-primary-foreground {
-  color: var(--primary-foreground);
+  color: hsl(var(--primary-foreground));
 }
 .text-purple-400 {
   --tw-text-opacity: 1;
@@ -1837,12 +1908,8 @@ video {
   --tw-text-opacity: 1;
   color: rgb(248 113 113 / var(--tw-text-opacity, 1));
 }
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
-}
 .text-secondary-foreground {
-  color: var(--secondary-foreground);
+  color: hsl(var(--secondary-foreground));
 }
 .text-sidebar-foreground {
   color: var(--sidebar-foreground);
@@ -1946,13 +2013,13 @@ video {
   --tw-ring-color: rgb(239 68 68 / 0.3);
 }
 .ring-ring {
-  --tw-ring-color: var(--ring);
+  --tw-ring-color: hsl(var(--ring));
 }
 .ring-sidebar-ring {
   --tw-ring-color: var(--sidebar-ring);
 }
 .ring-offset-background {
-  --tw-ring-offset-color: var(--background);
+  --tw-ring-offset-color: hsl(var(--background));
 }
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -2155,7 +2222,7 @@ body {
 }
 
 .file\:text-foreground::file-selector-button {
-  color: var(--foreground);
+  color: hsl(var(--foreground));
 }
 
 .placeholder\:text-xs::-moz-placeholder {
@@ -2169,11 +2236,11 @@ body {
 }
 
 .placeholder\:text-muted-foreground::-moz-placeholder {
-  color: var(--muted-foreground);
+  color: hsl(var(--muted-foreground));
 }
 
 .placeholder\:text-muted-foreground::placeholder {
-  color: var(--muted-foreground);
+  color: hsl(var(--muted-foreground));
 }
 
 .after\:absolute::after {
@@ -2242,15 +2309,35 @@ body {
 }
 
 .hover\:bg-accent:hover {
-  background-color: var(--accent);
+  background-color: hsl(var(--accent));
+}
+
+.hover\:bg-destructive\/80:hover {
+  background-color: hsl(var(--destructive) / 0.8);
+}
+
+.hover\:bg-destructive\/90:hover {
+  background-color: hsl(var(--destructive) / 0.9);
 }
 
 .hover\:bg-muted:hover {
-  background-color: var(--muted);
+  background-color: hsl(var(--muted));
+}
+
+.hover\:bg-muted\/50:hover {
+  background-color: hsl(var(--muted) / 0.5);
 }
 
 .hover\:bg-primary:hover {
-  background-color: var(--primary);
+  background-color: hsl(var(--primary));
+}
+
+.hover\:bg-primary\/80:hover {
+  background-color: hsl(var(--primary) / 0.8);
+}
+
+.hover\:bg-primary\/90:hover {
+  background-color: hsl(var(--primary) / 0.9);
 }
 
 .hover\:bg-purple-500\/20:hover {
@@ -2258,7 +2345,11 @@ body {
 }
 
 .hover\:bg-secondary:hover {
-  background-color: var(--secondary);
+  background-color: hsl(var(--secondary));
+}
+
+.hover\:bg-secondary\/80:hover {
+  background-color: hsl(var(--secondary) / 0.8);
 }
 
 .hover\:bg-sidebar-accent:hover {
@@ -2276,23 +2367,19 @@ body {
 }
 
 .hover\:text-accent-foreground:hover {
-  color: var(--accent-foreground);
+  color: hsl(var(--accent-foreground));
 }
 
 .hover\:text-foreground:hover {
-  color: var(--foreground);
+  color: hsl(var(--foreground));
 }
 
 .hover\:text-muted-foreground:hover {
-  color: var(--muted-foreground);
-}
-
-.hover\:text-primary:hover {
-  color: var(--primary);
+  color: hsl(var(--muted-foreground));
 }
 
 .hover\:text-primary-foreground:hover {
-  color: var(--primary-foreground);
+  color: hsl(var(--primary-foreground));
 }
 
 .hover\:text-sidebar-accent-foreground:hover {
@@ -2327,19 +2414,19 @@ body {
 }
 
 .focus\:bg-accent:focus {
-  background-color: var(--accent);
+  background-color: hsl(var(--accent));
 }
 
 .focus\:bg-primary:focus {
-  background-color: var(--primary);
+  background-color: hsl(var(--primary));
 }
 
 .focus\:text-accent-foreground:focus {
-  color: var(--accent-foreground);
+  color: hsl(var(--accent-foreground));
 }
 
 .focus\:text-primary-foreground:focus {
-  color: var(--primary-foreground);
+  color: hsl(var(--primary-foreground));
 }
 
 .focus\:opacity-100:focus {
@@ -2358,11 +2445,11 @@ body {
 }
 
 .focus\:ring-primary:focus {
-  --tw-ring-color: var(--primary);
+  --tw-ring-color: hsl(var(--primary));
 }
 
 .focus\:ring-ring:focus {
-  --tw-ring-color: var(--ring);
+  --tw-ring-color: hsl(var(--ring));
 }
 
 .focus\:ring-offset-2:focus {
@@ -2387,7 +2474,7 @@ body {
 }
 
 .focus-visible\:ring-ring:focus-visible {
-  --tw-ring-color: var(--ring);
+  --tw-ring-color: hsl(var(--ring));
 }
 
 .focus-visible\:ring-sidebar-ring:focus-visible {
@@ -2403,7 +2490,7 @@ body {
 }
 
 .focus-visible\:ring-offset-background:focus-visible {
-  --tw-ring-offset-color: var(--background);
+  --tw-ring-offset-color: hsl(var(--background));
 }
 
 .active\:bg-sidebar-accent:active {
@@ -2438,17 +2525,25 @@ body {
   opacity: 1;
 }
 
+.group.destructive .group-\[\.destructive\]\:border-muted\/40 {
+  border-color: hsl(var(--muted) / 0.4);
+}
+
 .group.destructive .group-\[\.destructive\]\:text-red-300 {
   --tw-text-opacity: 1;
   color: rgb(252 165 165 / var(--tw-text-opacity, 1));
 }
 
+.group.destructive .group-\[\.destructive\]\:hover\:border-destructive\/30:hover {
+  border-color: hsl(var(--destructive) / 0.3);
+}
+
 .group.destructive .group-\[\.destructive\]\:hover\:bg-destructive:hover {
-  background-color: var(--destructive);
+  background-color: hsl(var(--destructive));
 }
 
 .group.destructive .group-\[\.destructive\]\:hover\:text-destructive-foreground:hover {
-  color: var(--destructive-foreground);
+  color: hsl(var(--destructive-foreground));
 }
 
 .group.destructive .group-\[\.destructive\]\:hover\:text-red-50:hover {
@@ -2457,7 +2552,7 @@ body {
 }
 
 .group.destructive .group-\[\.destructive\]\:focus\:ring-destructive:focus {
-  --tw-ring-color: var(--destructive);
+  --tw-ring-color: hsl(var(--destructive));
 }
 
 .group.destructive .group-\[\.destructive\]\:focus\:ring-red-400:focus {
@@ -2502,15 +2597,19 @@ body {
 }
 
 .aria-selected\:bg-accent[aria-selected="true"] {
-  background-color: var(--accent);
+  background-color: hsl(var(--accent));
+}
+
+.aria-selected\:bg-accent\/50[aria-selected="true"] {
+  background-color: hsl(var(--accent) / 0.5);
 }
 
 .aria-selected\:text-accent-foreground[aria-selected="true"] {
-  color: var(--accent-foreground);
+  color: hsl(var(--accent-foreground));
 }
 
 .aria-selected\:text-muted-foreground[aria-selected="true"] {
-  color: var(--muted-foreground);
+  color: hsl(var(--muted-foreground));
 }
 
 .aria-selected\:opacity-100[aria-selected="true"] {
@@ -2617,35 +2716,39 @@ body {
 }
 
 .data-\[selected\=\'true\'\]\:bg-accent[data-selected='true'] {
-  background-color: var(--accent);
+  background-color: hsl(var(--accent));
 }
 
 .data-\[state\=active\]\:bg-background[data-state="active"] {
-  background-color: var(--background);
+  background-color: hsl(var(--background));
 }
 
 .data-\[state\=checked\]\:bg-primary[data-state="checked"] {
-  background-color: var(--primary);
+  background-color: hsl(var(--primary));
 }
 
 .data-\[state\=on\]\:bg-accent[data-state="on"] {
-  background-color: var(--accent);
+  background-color: hsl(var(--accent));
 }
 
 .data-\[state\=open\]\:bg-accent[data-state="open"] {
-  background-color: var(--accent);
+  background-color: hsl(var(--accent));
+}
+
+.data-\[state\=open\]\:bg-accent\/50[data-state="open"] {
+  background-color: hsl(var(--accent) / 0.5);
 }
 
 .data-\[state\=open\]\:bg-secondary[data-state="open"] {
-  background-color: var(--secondary);
+  background-color: hsl(var(--secondary));
 }
 
 .data-\[state\=selected\]\:bg-muted[data-state="selected"] {
-  background-color: var(--muted);
+  background-color: hsl(var(--muted));
 }
 
 .data-\[state\=unchecked\]\:bg-input[data-state="unchecked"] {
-  background-color: var(--input);
+  background-color: hsl(var(--input));
 }
 
 .data-\[active\=true\]\:font-medium[data-active="true"] {
@@ -2657,31 +2760,31 @@ body {
 }
 
 .data-\[placeholder\]\:text-muted-foreground[data-placeholder] {
-  color: var(--muted-foreground);
+  color: hsl(var(--muted-foreground));
 }
 
 .data-\[selected\=true\]\:text-accent-foreground[data-selected="true"] {
-  color: var(--accent-foreground);
+  color: hsl(var(--accent-foreground));
 }
 
 .data-\[state\=active\]\:text-foreground[data-state="active"] {
-  color: var(--foreground);
+  color: hsl(var(--foreground));
 }
 
 .data-\[state\=checked\]\:text-primary-foreground[data-state="checked"] {
-  color: var(--primary-foreground);
+  color: hsl(var(--primary-foreground));
 }
 
 .data-\[state\=on\]\:text-accent-foreground[data-state="on"] {
-  color: var(--accent-foreground);
+  color: hsl(var(--accent-foreground));
 }
 
 .data-\[state\=open\]\:text-accent-foreground[data-state="open"] {
-  color: var(--accent-foreground);
+  color: hsl(var(--accent-foreground));
 }
 
 .data-\[state\=open\]\:text-muted-foreground[data-state="open"] {
-  color: var(--muted-foreground);
+  color: hsl(var(--muted-foreground));
 }
 
 .data-\[disabled\=true\]\:opacity-50[data-disabled="true"] {
@@ -2948,7 +3051,7 @@ body {
 }
 
 .data-\[state\=open\]\:hover\:bg-accent:hover[data-state="open"] {
-  background-color: var(--accent);
+  background-color: hsl(var(--accent));
 }
 
 .data-\[state\=open\]\:hover\:bg-sidebar-accent:hover[data-state="open"] {
@@ -2960,7 +3063,7 @@ body {
 }
 
 .data-\[state\=open\]\:focus\:bg-accent:focus[data-state="open"] {
-  background-color: var(--accent);
+  background-color: hsl(var(--accent));
 }
 
 .group[data-collapsible="offcanvas"] .group-data-\[collapsible\=offcanvas\]\:left-\[calc\(var\(--sidebar-width\)\*-1\)\] {
@@ -3091,23 +3194,15 @@ body {
 }
 
 .dark\:border-border:is(.dark *) {
-  border-color: var(--border);
+  border-color: hsl(var(--border));
 }
 
 .dark\:border-destructive:is(.dark *) {
-  border-color: var(--destructive);
-}
-
-.dark\:bg-background:is(.dark *) {
-  background-color: var(--background);
+  border-color: hsl(var(--destructive));
 }
 
 .dark\:bg-card:is(.dark *) {
-  background-color: var(--card);
-}
-
-.dark\:text-foreground:is(.dark *) {
-  color: var(--foreground);
+  background-color: hsl(var(--card));
 }
 
 @media (min-width: 640px) {
@@ -3526,7 +3621,7 @@ body {
 }
 
 .\[\&\:has\(\[aria-selected\]\)\]\:bg-accent:has([aria-selected]) {
-  background-color: var(--accent);
+  background-color: hsl(var(--accent));
 }
 
 .first\:\[\&\:has\(\[aria-selected\]\)\]\:rounded-l-md:has([aria-selected]):first-child {
@@ -3537,6 +3632,10 @@ body {
 .last\:\[\&\:has\(\[aria-selected\]\)\]\:rounded-r-md:has([aria-selected]):last-child {
   border-top-right-radius: calc(var(--radius) - 2px);
   border-bottom-right-radius: calc(var(--radius) - 2px);
+}
+
+.\[\&\:has\(\[aria-selected\]\.day-outside\)\]\:bg-accent\/50:has([aria-selected].day-outside) {
+  background-color: hsl(var(--accent) / 0.5);
 }
 
 .\[\&\:has\(\[aria-selected\]\.day-range-end\)\]\:rounded-r-md:has([aria-selected].day-range-end) {
@@ -3616,15 +3715,15 @@ body {
 }
 
 .\[\&\>svg\]\:text-destructive>svg {
-  color: var(--destructive);
+  color: hsl(var(--destructive));
 }
 
 .\[\&\>svg\]\:text-foreground>svg {
-  color: var(--foreground);
+  color: hsl(var(--foreground));
 }
 
 .\[\&\>svg\]\:text-muted-foreground>svg {
-  color: var(--muted-foreground);
+  color: hsl(var(--muted-foreground));
 }
 
 .\[\&\>svg\]\:text-sidebar-accent-foreground>svg {
@@ -3650,11 +3749,15 @@ body {
 }
 
 .\[\&_\.recharts-cartesian-axis-tick_text\]\:fill-muted-foreground .recharts-cartesian-axis-tick text {
-  fill: var(--muted-foreground);
+  fill: hsl(var(--muted-foreground));
+}
+
+.\[\&_\.recharts-cartesian-grid_line\[stroke\=\'\#ccc\'\]\]\:stroke-border\/50 .recharts-cartesian-grid line[stroke='#ccc'] {
+  stroke: hsl(var(--border) / 0.5);
 }
 
 .\[\&_\.recharts-curve\.recharts-tooltip-cursor\]\:stroke-border .recharts-curve.recharts-tooltip-cursor {
-  stroke: var(--border);
+  stroke: hsl(var(--border));
 }
 
 .\[\&_\.recharts-dot\[stroke\=\'\#fff\'\]\]\:stroke-transparent .recharts-dot[stroke='#fff'] {
@@ -3667,19 +3770,19 @@ body {
 }
 
 .\[\&_\.recharts-polar-grid_\[stroke\=\'\#ccc\'\]\]\:stroke-border .recharts-polar-grid [stroke='#ccc'] {
-  stroke: var(--border);
+  stroke: hsl(var(--border));
 }
 
 .\[\&_\.recharts-radial-bar-background-sector\]\:fill-muted .recharts-radial-bar-background-sector {
-  fill: var(--muted);
+  fill: hsl(var(--muted));
 }
 
 .\[\&_\.recharts-rectangle\.recharts-tooltip-cursor\]\:fill-muted .recharts-rectangle.recharts-tooltip-cursor {
-  fill: var(--muted);
+  fill: hsl(var(--muted));
 }
 
 .\[\&_\.recharts-reference-line_\[stroke\=\'\#ccc\'\]\]\:stroke-border .recharts-reference-line [stroke='#ccc'] {
-  stroke: var(--border);
+  stroke: hsl(var(--border));
 }
 
 .\[\&_\.recharts-sector\[stroke\=\'\#fff\'\]\]\:stroke-transparent .recharts-sector[stroke='#fff'] {
@@ -3716,7 +3819,7 @@ body {
 }
 
 .\[\&_\[cmdk-group-heading\]\]\:text-muted-foreground [cmdk-group-heading] {
-  color: var(--muted-foreground);
+  color: hsl(var(--muted-foreground));
 }
 
 .\[\&_\[cmdk-group\]\:not\(\[hidden\]\)_\~\[cmdk-group\]\]\:pt-0 [cmdk-group]:not([hidden]) ~[cmdk-group] {
@@ -3806,72 +3909,3 @@ body {
 [data-side=right] .\[\[data-side\=right\]_\&\]\:cursor-e-resize {
   cursor: e-resize;
 }
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.tsx","import":"Inter","arguments":[{"subsets":["latin"]}],"variableName":"inter"} ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url(/_next/static/media/55c55f0601d81cf3-s.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url(/_next/static/media/26a46d62cd723877-s.woff2) format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek-ext */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url(/_next/static/media/97e0cb1ae144a2a9-s.woff2) format('woff2');
-  unicode-range: U+1F00-1FFF;
-}
-/* greek */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url(/_next/static/media/581909926a08bbc8-s.woff2) format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url(/_next/static/media/df0a9ae256c0569c-s.woff2) format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url(/_next/static/media/8e9860b6e62d6359-s.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url(/_next/static/media/e4af272ccee01ff0-s.p.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}@font-face {font-family: 'Inter Fallback';src: local("Arial");ascent-override: 90.44%;descent-override: 22.52%;line-gap-override: 0.00%;size-adjust: 107.12%
-}.__className_e8ce0c {font-family: 'Inter', 'Inter Fallback';font-style: normal
-}
-

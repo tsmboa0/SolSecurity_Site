@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
+    "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
-      "es6"
+      "esnext"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -21,26 +22,21 @@
         "name": "next"
       }
     ],
-    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./*"
-      ],
-      "@/shared/*": [
-        "./shared/*"
+        "./app/*"
       ],
       "@shared/*": [
-        "./shared/*"
+        "./app/shared/*"
       ]
-    },
-    "target": "ES2017"
+    }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "app/utils/helpers"  ],
   "exclude": [
     "node_modules"
   ]

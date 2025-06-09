@@ -1,13 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  serverExternalPackages: ['@neondatabase/serverless'],
-  webpack: (config) => {
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      fs: false,
-    };
-    return config;
+  reactStrictMode: true,
+  swcMinify: true,
+  images: {
+    domains: ['localhost'],
+  },
+  experimental: {
+    serverActions: {
+      allowedOrigins: ['localhost:3000'],
+    },
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
