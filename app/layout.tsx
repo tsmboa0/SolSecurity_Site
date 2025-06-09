@@ -9,6 +9,7 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
   title: 'SolSecurity - Solana Wallet Security Scanner',
   description: 'Protect your Solana assets with advanced security analysis. Our platform detects address poisoning and account dusting attacks to keep your wallet safe from malicious actors.',
   keywords: ['Solana', 'wallet', 'security', 'blockchain', 'crypto', 'scanner'],

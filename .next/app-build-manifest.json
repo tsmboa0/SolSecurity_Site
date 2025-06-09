@@ -1,20 +1,44 @@
 {
   "pages": {
-    "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
-    ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+    "/_not-found/page": [
+      "static/chunks/webpack-d6abbf1fcfdef890.js",
+      "static/chunks/4bd1b696-56ba7eecf936cedf.js",
+      "static/chunks/684-c6f6f2cf84bbc45b.js",
+      "static/chunks/main-app-846cab6dcf914d28.js",
+      "static/chunks/app/_not-found/page-b2af7dc082e0367b.js"
     ],
     "/api/analyze/route": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/api/analyze/route.js"
+      "static/chunks/webpack-d6abbf1fcfdef890.js",
+      "static/chunks/4bd1b696-56ba7eecf936cedf.js",
+      "static/chunks/684-c6f6f2cf84bbc45b.js",
+      "static/chunks/main-app-846cab6dcf914d28.js",
+      "static/chunks/app/api/analyze/route-8335fd842af49e69.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-d6abbf1fcfdef890.js",
+      "static/chunks/4bd1b696-56ba7eecf936cedf.js",
+      "static/chunks/684-c6f6f2cf84bbc45b.js",
+      "static/chunks/main-app-846cab6dcf914d28.js",
+      "static/css/3c87056ab9575765.css",
+      "static/chunks/412-057cd96ba2c6f20b.js",
+      "static/chunks/179-0f94918eb51a8c4c.js",
+      "static/chunks/app/layout-bc951d6672c74b03.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-d6abbf1fcfdef890.js",
+      "static/chunks/4bd1b696-56ba7eecf936cedf.js",
+      "static/chunks/684-c6f6f2cf84bbc45b.js",
+      "static/chunks/main-app-846cab6dcf914d28.js",
+      "static/chunks/412-057cd96ba2c6f20b.js",
+      "static/chunks/871-46384c51e7c9923f.js",
+      "static/chunks/app/page-4078aa8d930a549f.js"
+    ],
+    "/api/og/route": [
+      "static/chunks/webpack-d6abbf1fcfdef890.js",
+      "static/chunks/4bd1b696-56ba7eecf936cedf.js",
+      "static/chunks/684-c6f6f2cf84bbc45b.js",
+      "static/chunks/main-app-846cab6dcf914d28.js",
+      "static/chunks/app/api/og/route-1ccc2e29e90d613e.js"
     ]
   }
 }
