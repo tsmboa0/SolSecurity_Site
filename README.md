@@ -5,7 +5,7 @@ SolSecurity is a Solana wallet security scanner that helps users protect their a
 ## Features
 
 - **Wallet Security Analysis**: Scan your Solana wallet for potential security threats.
-- **Dynamic Open Graph Images**: Share your scan results on social media with a custom preview image.
+- **Social Sharing**: Share your scan results on social media.
 - **Responsive Design**: Optimized for both desktop and mobile devices.
 
 ## Getting Started
@@ -28,19 +28,12 @@ SolSecurity is a Solana wallet security scanner that helps users protect their a
    npm install
    ```
 
-3. Set up environment variables:
-   Create a `.env.local` file in the root directory with the following variables:
-   ```env
-   NEXT_PUBLIC_APP_URL=http://localhost:3000
-   ```
-   For production, set this to your actual domain.
-
-4. Run the development server:
+3. Run the development server:
    ```bash
    npm run dev
    ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Deployment
 
@@ -54,25 +47,20 @@ SolSecurity is a Solana wallet security scanner that helps users protect their a
    - Set build command: `npm run build`
    - Set publish directory: `.next`
 
-3. Add environment variables in Netlify:
-   - Go to Site settings > Build & deploy > Environment variables
-   - Add `NEXT_PUBLIC_APP_URL` with your Netlify domain (e.g., `https://your-app-name.netlify.app`)
-
-4. Deploy!
+3. Deploy!
 
 ## Usage
 
 1. Enter your Solana wallet address in the scanner form.
 2. Click "Analyze Wallet Security" to start the scan.
 3. View your scan results, including risk level and score.
-4. Share your results on X (Twitter) with a custom preview image.
+4. Share your results on X (Twitter).
 
 ## Technologies Used
 
 - **Next.js**: React framework for building the application.
 - **Tailwind CSS**: Utility-first CSS framework for styling.
 - **Framer Motion**: Animation library for smooth transitions.
-- **Vercel OG**: Dynamic Open Graph image generation.
 
 ## Contributing
 

@@ -21,9 +21,7 @@ export default function ShareButton({ walletAddress, overallRiskScore }: ShareBu
     
     const tweetText = `Just scanned my Solana wallet (${shortAddress}) for security threats! 🔍\n\nRisk Level: ${riskLevel}\n\nProtect your crypto from address poisoning & dusting attacks 🛡️\n\nTry it yourself 👇`;
     
-    const baseUrl = window.location.origin;
-    const ogImageUrl = `${baseUrl}/api/og?address=${encodeURIComponent(walletAddress)}&riskScore=${encodeURIComponent(overallRiskScore)}&riskLevel=${encodeURIComponent(riskLevel)}`;
-    const url = encodeURIComponent(`${baseUrl}?og_image=${encodeURIComponent(ogImageUrl)}`);
+    const url = encodeURIComponent(window.location.origin);
     const text = encodeURIComponent(tweetText);
     const twitterUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
     
