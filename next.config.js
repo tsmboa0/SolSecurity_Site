@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    serverComponentsExternalPackages: ['@neondatabase/serverless']
-  },
+  serverExternalPackages: ['@neondatabase/serverless'],
   webpack: (config) => {
     config.resolve.fallback = {
       ...config.resolve.fallback,
@@ -12,4 +10,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
