@@ -113,6 +113,7 @@ export function detectPoisonedSenders(senders: any[], receivers: string[]) {
       const rLast4 = rAddr.slice(-4).toLowerCase();
 
       if (sFirst4 === rFirst4 || sLast4 === rLast4) {
+        console.log(`pushing poisoned sender: ${sender.address}`);
         poisonedSenders.push(sender);
         mimickedAddresses.push(rAddr);
       }
@@ -179,9 +180,8 @@ export async function checkWalletPoisoning(walletAddress: string) {
 
     const { senders, recipients } = extracted;
     const poisoningResults = detectPoisonedSenders(senders, recipients);
-    const dustingSenders = detectDustSenders(poisoningResults.poisonedSenders);
 
-    const poisonedAddresses = dustingSenders.map((sender: any) => sender.address);
+    const poisonedAddresses = poisoningResults.poisonedSenders.map((sender: any) => sender.address);
     const poisoned = deduplicatePoisonedSenders(poisonedAddresses);
 
     const mimicked = deduplicateMimickedAddresses(poisoningResults.mimickedAddresses);
@@ -190,7 +190,7 @@ export async function checkWalletPoisoning(walletAddress: string) {
     results.mimicked_addresses = mimicked;
     results.poisoned_addresses = poisoned;
 
-    results.summary = `Found ${poisoningResults.poisonedSenders.length} confirmed poisoning attacks and ${dustingSenders.length} dusting attacks after analyzing ${recentTransfers.length} latest transactions`;
+    results.summary = `Found ${poisoningResults.poisonedSenders.length} confirmed poisoning attacks and ${poisoned.length} dusting attacks after analyzing ${recentTransfers.length} latest transactions`;
     results.score = mimicked.length / poisoned.length;
 
     console.log(`Poisoning analysis results: ${JSON.stringify(results)}`);

@@ -21,7 +21,9 @@ export default function ShareButton({ walletAddress, overallRiskScore }: ShareBu
     
     const tweetText = `Just scanned my Solana wallet (${shortAddress}) for security threats! 🔍\n\nRisk Level: ${riskLevel}\n\nProtect your crypto from address poisoning & dusting attacks 🛡️\n\nTry it yourself 👇`;
     
-    const url = encodeURIComponent(window.location.origin);
+    // Ensure we're using the full URL including protocol
+    const baseUrl = window.location.origin;
+    const url = encodeURIComponent(`${baseUrl}/?preview=true`);
     const text = encodeURIComponent(tweetText);
     const twitterUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
     
